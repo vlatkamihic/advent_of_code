@@ -1,5 +1,4 @@
 import numpy as np
-import time
 
 def findNumbers(line):
     textNumbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
@@ -16,15 +15,15 @@ def findNumbers(line):
     return newLine
 
 def part1():
-    inputCode = list(np.loadtxt("input.txt", dtype='str'))
-    f=filter(str.isdigit,inputCode)
+    inputCode = list(np.loadtxt("/Users/vlatkamihic/Documents/Development/Advent Of Code/advent_of_code/Year 2023/Day 1/input.txt", dtype='str'))
     numbers = ["".join(filter(str.isdigit, line)) for line in inputCode]
     suma = sum([int(number[0]+number[-1]) if len(number) >= 2 else int(number[0]+number[0]) for number in numbers])
-    print(suma)
+    print(suma)   
+
 
 def part2():
     # inputCode = ['two1nine', 'eightwothree', 'abcone2threexyz', 'xtwone3four', '4nineeightseven2', 'zoneight234', '7pqrstsixteen']  -- testCase
-    inputCode = list(np.loadtxt("input.txt", dtype='str'))
+    inputCode = list(np.loadtxt("/Users/vlatkamihic/Documents/Development/Advent Of Code/advent_of_code/Year 2023/Day 1/input.txt", dtype='str'))
     txtToNumbers = [ findNumbers(line) for line in inputCode]
     numbers = ["".join(filter(str.isdigit, line)) for line in txtToNumbers]
     # print(numbers)
