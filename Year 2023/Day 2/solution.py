@@ -1,5 +1,4 @@
 import re
-import math
 
 def getGamePower(game):
     game = re.sub('Game ', '', game)
@@ -22,7 +21,7 @@ def getGamePower(game):
             green = int(dictionary['green'])
             if(green > maxGreen): maxGreen = green
     power = maxBlue*maxGreen*maxRed
-    print(power)
+    # print(power)
     return power
 
 def validateGame(game, maxBlue, maxRed, maxGreen):
@@ -42,8 +41,9 @@ def validateGame(game, maxBlue, maxRed, maxGreen):
         if(blue > maxBlue or red > maxRed or green > maxGreen):
             id  = 0
             break
-    print(id)
+    # print(id)
     return int(id)
+
 
 def main():
     
